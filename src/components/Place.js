@@ -1,9 +1,9 @@
 import { PlaceImage } from "./PlaceImage";
 
-export function Place({ place, imageSize }) {
+export function Place({ place }) {
   return (
     <>
-      <PlaceImage place={place} imageSize={imageSize} />
+      <PlaceImage place={place} />
       <p>
         <b>{place.name}</b>
         {": " + place.description}

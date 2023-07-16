@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { places } from "./data/places.js";
 import { List } from "./components/List.js";
+import { ImageSizeContext } from "./context/image-size.context.js";
 
 export default function App() {
   const [isLarge, setIsLarge] = useState(false);
@@ -18,7 +19,9 @@ export default function App() {
         Use large images
       </label>
       <hr />
-      <List places={places} imageSize={imageSize} />
+      <ImageSizeContext.Provider value={imageSize}>
+        <List places={places} />
+      </ImageSizeContext.Provider>
     </>
   );
 }
